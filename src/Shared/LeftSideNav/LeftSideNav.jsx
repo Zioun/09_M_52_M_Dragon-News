@@ -19,7 +19,7 @@ const LeftSideNav = () => {
         </div>
         <div className="flex flex-col pt-2">
         {
-            category.map(category => <button key={category.id} className="text-[#9F9F9F] hover:text-[#403F3F] text-[16px] border-none shadow-none btn w-full border-1 bg-transparent flex justify-start pl-10">
+            category.map(category => <button key={category.id} className="text-[#9F9F9F] hover:text-[#403F3F] text-[16px] border-none shadow-none btn w-full border-1 bg-transparent flex justify-start pl-5">
             {category.name}
           </button>)
           }

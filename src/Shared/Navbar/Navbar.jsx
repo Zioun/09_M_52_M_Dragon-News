@@ -1,8 +1,15 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
 import profile from "../../assets/user.png";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+    .then()
+    .catch()
+  }
   const links = (
     <div className="flex gap-5">
       <li>
@@ -51,9 +58,19 @@ const Navbar = () => {
         <div className="navbar-end">
           <div className="flex gap-5">
             <img className="h-[50px] w-[50px]" src={profile} alt="" />
-            <button className="btn btn-neutral rounded-none px-10 text-[16px] text-white">
-              Login
-            </button>
+            {
+              user ? 
+              <button onClick={handleLogout} className="btn btn-neutral rounded-none px-10 text-[16px] text-white">
+                Logout
+              </button>
+              :
+              <Link to="/login">
+              <button className="btn btn-neutral rounded-none px-10 text-[16px] text-white">
+                Login
+              </button>
+              </Link>
+            }
+            
           </div>
         </div>
       </div>
