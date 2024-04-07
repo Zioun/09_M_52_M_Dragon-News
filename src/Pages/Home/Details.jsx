@@ -20,7 +20,7 @@ const Details = () => {
                             <h1></h1>
                         </div>
                         <div>
-                            <p></p>
+                            <p>{id}</p>
                         </div>
                         <div>
                             <button></button>
